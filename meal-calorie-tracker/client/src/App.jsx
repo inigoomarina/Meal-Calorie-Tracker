@@ -10,9 +10,9 @@ import Register from '@/pages/Register.jsx';
 import Dashboard from '@/pages/Dashboard.jsx';
 import LogMeal from '@/pages/LogMeal.jsx';
 import MealHistory from '@/pages/MealHistory.jsx';
-import Profile from '@/pages/Profile.jsx';
+// import Profile from '@/pages/Profile.jsx'; // Remove this line
 // Assuming NotFound component exists or is created
-// import NotFound from '@/pages/NotFound.jsx'; 
+// import NotFound from '@/pages/NotFound.jsx';
 import './App.css';
 
 // AppContent component uses hooks that require Router context
@@ -62,16 +62,16 @@ function AppContent() {
               </ProtectedRoute>
             } 
           />
-          {/* Add Profile route if needed */}
-          <Route 
-            path="/profile" 
+          {/* Remove the Profile route */}
+          {/* <Route
+            path="/profile"
             element={
               <ProtectedRoute>
                 <Profile />
               </ProtectedRoute>
-            } 
-          />
-          {/* Fallback for unknown routes - Uncomment if NotFound exists */}
+            }
+          /> */}
+          {/* Add a NotFound route if desired */}
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </main>
@@ -84,10 +84,11 @@ function AppContent() {
 // It should NOT render a <Router> itself.
 function App() {
   return (
-    // AuthProvider should be inside the Router in main.jsx
-    // <AuthProvider> 
-       <AppContent />
-    // </AuthProvider>
+    <AuthProvider>
+      {/* BrowserRouter should wrap AppContent */}
+      {/* If BrowserRouter is in main.jsx, this is correct */}
+      <AppContent />
+    </AuthProvider>
   );
 }
 
