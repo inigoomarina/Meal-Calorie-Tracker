@@ -1,0 +1,103 @@
+/* ... existing styles ... */
+
+/* Styles for Today's Meals Grid */
+.recent-meals h2 {
+  margin-bottom: 15px;
+}
+
+.meals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 15px;
+}
+
+.meal-card {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes time to the bottom */
+  min-height: 150px; /* Ensure cards have a minimum height */
+}
+
+.meal-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+.meal-card .meal-name {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0; /* Adjusted margin */
+}
+
+.meal-card .meal-calories {
+  font-size: 1em;
+  font-weight: bold;
+  color: #FF9800; /* Orange color for calories */
+  margin-bottom: 10px;
+}
+
+.meal-card .meal-macros-summary {
+  font-size: 0.85em;
+  color: #666;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.meal-card .meal-macros-summary span {
+  margin-right: 8px;
+  display: inline-block; /* Or block if needed */
+}
+
+.meal-card .meal-time {
+  font-size: 0.8em;
+  color: #888;
+  margin-top: auto; /* Pushes time to the bottom */
+  text-align: right;
+}
+
+.no-meals {
+  text-align: center;
+  color: #777;
+  padding: 20px 0;
+}
+
+.no-meals a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.no-meals a:hover {
+  text-decoration: underline;
+}
+
+
+/* Styles for Circular Progress Subtitle */
+.circular-progress-subtitle {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Adjust remaining text if subtitle is present */
+.circular-progress-subtitle + .circular-progress-remaining {
+  display: none; /* Hide remaining if subtitle exists */
+}
+
+/* Ensure remaining shows if no subtitle */
+.circular-progress-remaining {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 5px;
+  text-align: center;
+}
+
+
+/* ... rest of existing styles ... */

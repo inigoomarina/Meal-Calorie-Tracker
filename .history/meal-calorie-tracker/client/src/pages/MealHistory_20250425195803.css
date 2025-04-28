@@ -1,0 +1,386 @@
+.meal-history {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.meal-history h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  animation: fadeIn 0.6s ease;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  animation: slideDown 0.4s ease;
+}
+
+.date-filters {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.form-group input[type="date"] {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: all 0.2s ease;
+}
+
+.form-group input[type="date"]:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  outline: none;
+}
+
+.history-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  animation: fadeIn 0.6s ease;
+}
+
+.history-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.history-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.history-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.over-goal::before {
+  background-color: #F44336;
+}
+
+.under-goal::before {
+  background-color: #4CAF50;
+}
+
+.history-card-date {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.history-card-calories {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.calorie-value {
+  font-size: 2.4em;
+  font-weight: 700;
+  color: #333;
+  display: block;
+}
+
+.calorie-unit {
+  color: #777;
+  font-size: 1em;
+}
+
+.history-card-status {
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 6px;
+  border-radius: 20px;
+}
+
+.over-indicator {
+  color: #d32f2f;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.under-indicator {
+  color: #388e3c;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.view-details-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-details-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Modal styles */
+.meal-detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.meal-detail-modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.meal-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.meal-detail-header h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.meal-detail-content {
+  padding: 20px;
+}
+
+.meal-detail-summary {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.detail-item .label {
+  font-weight: 600;
+  color: #555;
+}
+
+.detail-item.status {
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.detail-item.over .value {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+.detail-item.under .value {
+  color: #388e3c;
+  font-weight: 600;
+}
+
+.macro-breakdown {
+  margin-bottom: 25px;
+}
+
+.macro-breakdown h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.macro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.macro-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.macro-label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.macro-value {
+  margin-bottom: 5px;
+}
+
+.macro-bar {
+  height: 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.macro-progress {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.meal-list h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.meal-item-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.meal-item-card:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.meal-item-header {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.meal-item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.meal-item-macros {
+  display: flex;
+  gap: 10px;
+  font-size: 0.9em;
+}
+
+.meal-time {
+  color: #777;
+  font-size: 0.85em;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #4CAF50;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+.no-data-message {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 1.1em;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #d32f2f;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-15px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) {
+  .macro-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

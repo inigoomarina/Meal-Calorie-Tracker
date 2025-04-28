@@ -1,0 +1,214 @@
+.log-meal-container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.log-meal-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.food-search-section {
+  margin-bottom: 30px;
+}
+
+.search-form {
+  position: relative; /* Needed for absolute positioning of dropdown */
+}
+
+.search-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.autocomplete-input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.search-spinner {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid #3498db; /* Blue */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Suggestions Dropdown */
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%; /* Position below the input */
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 1000; /* Ensure it's above other content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+.suggestion-name {
+  font-weight: 500;
+}
+
+.suggestion-brand {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+.meal-details-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.meal-details-section h2 {
+  margin-bottom: 5px;
+}
+
+.brand-name {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.gram-control {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.gram-control input[type="range"] {
+  flex-grow: 1;
+}
+
+.gram-control input[type="number"] {
+  width: 80px;
+  padding: 8px 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.gram-unit {
+  font-weight: 500;
+}
+
+/* Nutrition Grid */
+.nutrition-info {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.nutrition-info h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #444;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  text-align: center;
+}
+
+.nutrition-item {
+  background-color: #fff;
+  padding: 15px 10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nutrition-item .label {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.nutrition-item .value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Specific colors for main macros */
+.nutrition-item.calories .value { color: #ff6d00; }
+.nutrition-item.protein .value { color: #2196f3; }
+.nutrition-item.carbs .value { color: #4caf50; }
+.nutrition-item.fat .value { color: #9c27b0; }
+
+
+.btn-log-meal {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}

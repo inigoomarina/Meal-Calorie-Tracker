@@ -1,0 +1,105 @@
+.meal-calendar {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+  /* Adjust grid columns based on screen size if needed */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+}
+
+.calendar-day-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+  border-left-width: 5px; /* Add a colored left border */
+}
+
+.calendar-day-card:hover {
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day-card.over-goal {
+  border-left-color: #d9534f; /* Red for over goal */
+}
+
+.calendar-day-card.under-goal {
+  border-left-color: #5cb85c; /* Green for under goal */
+}
+
+.day-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.day-card-header h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.day-total-calories {
+  font-weight: bold;
+  color: #555;
+}
+
+.day-goal-message {
+  font-size: 0.95em;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.calendar-day-card.over-goal .day-goal-message {
+  color: #a94442; /* Darker red text */
+}
+
+.calendar-day-card.under-goal .day-goal-message {
+  color: #3c763d; /* Darker green text */
+}
+
+
+.day-meals-list h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1em;
+  color: #444;
+}
+
+.day-meals-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.day-meals-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  font-size: 0.9em;
+  color: #555;
+  border-bottom: 1px dashed #eee; /* Separator for meals */
+}
+
+.day-meals-list li:last-child {
+  border-bottom: none;
+}
+
+.btn-delete-meal {
+  background: none;
+  border: none;
+  color: #d9534f;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 0 5px;
+  line-height: 1;
+}
+
+.btn-delete-meal:hover {
+  color: #c9302c;
+}

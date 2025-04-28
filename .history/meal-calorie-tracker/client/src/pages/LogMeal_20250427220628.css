@@ -1,0 +1,226 @@
+.log-meal-container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.log-meal-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.food-search-section {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.search-input-container {
+  position: relative;
+}
+
+.autocomplete-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+.search-spinner {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Suggestions Dropdown */
+.suggestions-dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  max-height: 250px;
+  overflow-y: auto;
+  width: 100%; /* Match input width */
+  box-sizing: border-box;
+  z-index: 1000; /* Ensure it appears above other elements */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.suggestion-item {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover,
+.suggestion-item:focus {
+  background-color: #f0f0f0;
+  outline: none;
+}
+
+.suggestion-name {
+  font-weight: 500;
+}
+
+.suggestion-brand {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Meal Details Section */
+.meal-details-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.meal-details-section h2 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.brand-name {
+  font-style: italic;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.gram-control {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.gram-control input[type="range"] {
+  flex-grow: 1;
+}
+
+.gram-control input[type="number"] {
+  width: 80px;
+  padding: 8px 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.gram-unit {
+  font-weight: 500;
+}
+
+/* Nutrition Info Grid */
+.nutrition-info-grid {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.nutrition-info-grid h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #555;
+}
+
+.nutrition-grid {
+  display: grid;
+  /* Create 2 columns for wider screens, 1 for smaller */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.nutrition-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.nutrition-item .label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.nutrition-item .value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #2b6cb0;
+}
+
+.btn-primary:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: #fff5f5;
+  color: #e53e3e;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-left: 4px solid #e53e3e;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}

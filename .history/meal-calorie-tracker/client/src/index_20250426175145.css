@@ -1,0 +1,292 @@
+/* Base styles and resets */
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #2196F3;
+  --text-color: #333;
+  --bg-color: #f8f9fa;
+  --card-bg-color: #fff;
+  --border-color: #e0e0e0;
+  --error-color: #f44336;
+  --success-color: #4caf50;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding: 20px;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Container and layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #388e3c;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Utility classes */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Apply animations to common elements */
+.card {
+  animation: fadeIn 0.5s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Staggered animation for lists */
+.meals-grid > div,
+.macros-gauges > div,
+.weekly-calories-container > div {
+  animation: slideInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.meals-grid > div:nth-child(1),
+.macros-gauges > div:nth-child(1),
+.weekly-calories-container > div:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.meals-grid > div:nth-child(2),
+.macros-gauges > div:nth-child(2),
+.weekly-calories-container > div:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.meals-grid > div:nth-child(3),
+.macros-gauges > div:nth-child(3),
+.weekly-calories-container > div:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.meals-grid > div:nth-child(4),
+.macros-gauges > div:nth-child(4),
+.weekly-calories-container > div:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.meals-grid > div:nth-child(5),
+.macros-gauges > div:nth-child(5),
+.weekly-calories-container > div:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.meals-grid > div:nth-child(6),
+.macros-gauges > div:nth-child(6),
+.weekly-calories-container > div:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+.meals-grid > div:nth-child(7),
+.macros-gauges > div:nth-child(7),
+.weekly-calories-container > div:nth-child(7) {
+  animation-delay: 0.35s;
+}
+
+/* Add this to improve button UX and show feedback */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.btn-primary:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* Improve loading state animations */
+.loading::after {
+  content: "...";
+  display: inline-block;
+  animation: ellipsis 1.5s infinite;
+  width: 20px;
+  text-align: left;
+}
+
+@keyframes ellipsis {
+  0% { content: "."; }
+  33% { content: ".."; }
+  66% { content: "..."; }
+  100% { content: "."; }
+}
+
+/* Improve transitions between pages */
+.dashboard,
+.meal-history,
+.log-meal-container {
+  animation: pageTransition 0.4s ease-out;
+}
+
+@keyframes pageTransition {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}

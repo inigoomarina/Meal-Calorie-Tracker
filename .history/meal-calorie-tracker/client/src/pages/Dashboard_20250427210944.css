@@ -1,0 +1,167 @@
+/* ... existing styles ... */
+
+/* Today's Meals Grid */
+.recent-meals h2 {
+  margin-bottom: 15px;
+}
+
+.meals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 15px;
+}
+
+.meal-card {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 12px 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 4px solid #6c757d; /* Subtle border */
+}
+
+.meal-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.meal-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.meal-name {
+  font-size: 1.05em;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  line-height: 1.3;
+  /* Allow wrapping */
+  word-break: break-word;
+  margin-right: 5px; /* Space between name and time */
+}
+
+.meal-time {
+  font-size: 0.8em;
+  color: #777;
+  white-space: nowrap; /* Prevent time from wrapping */
+}
+
+.meal-card-body {
+  /* Styles for calories and macros */
+}
+
+.meal-calories {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #FF9800; /* Match calorie progress color */
+  margin-bottom: 8px;
+}
+
+.meal-macros-summary {
+  font-size: 0.85em;
+  color: #555;
+  display: flex;
+  justify-content: space-between; /* Space out P/C/F */
+  gap: 5px; /* Add small gap */
+  flex-wrap: wrap; /* Allow wrapping if needed */
+}
+
+.meal-macros-summary span {
+  white-space: nowrap; /* Keep P: Xg together */
+}
+
+
+.no-meals {
+  text-align: center;
+  color: #777;
+  padding: 20px 0;
+}
+
+.no-meals a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.no-meals a:hover {
+  text-decoration: underline;
+}
+
+/* Meal Detail Modal Styles */
+/* ... existing modal styles ... */
+
+/* Ensure modal content is readable */
+.meal-modal-content {
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  max-width: 450px;
+  width: 90%;
+  position: relative;
+}
+
+.meal-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.meal-modal-header h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.meal-modal-body .meal-detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 1em;
+  border-bottom: 1px dashed #f0f0f0;
+}
+.meal-modal-body .meal-detail-item:last-child {
+  border-bottom: none;
+}
+
+.meal-modal-body .label {
+  color: #555;
+  font-weight: bold;
+}
+
+.meal-modal-body .value {
+  color: #333;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  color: #aaa;
+  cursor: pointer;
+  padding: 0 5px;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #555;
+}
+
+.meal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050; /* Ensure it's above other content */
+}

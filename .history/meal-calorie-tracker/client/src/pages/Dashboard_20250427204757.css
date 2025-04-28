@@ -1,0 +1,279 @@
+/* ... existing styles ... */
+
+/* Goal Settings Modal Styles */
+.goal-settings-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it's on top */
+}
+
+.goal-settings-modal-content {
+  background-color: #ffffff; /* White background */
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px; /* Limit maximum width */
+  position: relative;
+}
+
+.goal-settings-modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.goal-settings-modal-content .form-group {
+  margin-bottom: 15px;
+}
+
+.goal-settings-modal-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.goal-settings-modal-content input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.goal-settings-modal-content .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.goal-settings-modal-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #aaa;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.goal-settings-modal-content .close-btn:hover {
+  color: #333;
+}
+
+
+/* Meal Detail Modal Styles (similar overlay concept) */
+.meal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.meal-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+}
+
+.meal-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.meal-modal-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.meal-modal-body .meal-detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.meal-modal-body .label {
+  font-weight: bold;
+  color: #555;
+}
+
+.meal-modal-body .value {
+  color: #333;
+}
+
+/* Ensure dashboard actions wrap nicely */
+.dashboard-actions {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 10px; /* Add space between buttons */
+  align-items: center;
+}
+
+/* Weekly Overview Bar Chart Styles */
+.weekly-calories-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 150px; /* Adjust height as needed */
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+  margin-top: 15px;
+}
+
+.day-calories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 12%; /* Adjust width based on number of days */
+  text-align: center;
+}
+
+.day-label {
+  font-size: 0.8em;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.day-progress-container {
+  width: 20px; /* Width of the bar */
+  height: 100px; /* Max height of the bar */
+  background-color: #f0f0f0; /* Background for the bar area */
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column-reverse; /* Bars grow from bottom */
+  margin-bottom: 5px;
+}
+
+.day-progress-bar {
+  width: 100%;
+  transition: height 0.3s ease-out;
+}
+
+.day-value {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Circular Progress adjustments */
+.circular-progress.large .circular-progress-container {
+  width: 120px;
+  height: 120px;
+}
+.circular-progress.large .circular-progress-value {
+  font-size: 1.8em;
+}
+.circular-progress.large .circular-progress-unit {
+  font-size: 0.9em;
+}
+.circular-progress.large .circular-progress-subtitle {
+  font-size: 0.9em;
+  margin-top: 8px;
+}
+
+.calories-display {
+  display: flex;
+  justify-content: center; /* Center the large calorie circle */
+  padding: 20px 0;
+}
+
+.macros-gauges {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.circular-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.circular-progress-title {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.circular-progress-container {
+  position: relative;
+  width: 80px; /* Default size */
+  height: 80px; /* Default size */
+  border-radius: 50%;
+  background: conic-gradient(var(--color) var(--rotation), #e0e0e0 0deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-progress-container::before {
+  content: '';
+  position: absolute;
+  width: calc(100% - 16px); /* Adjust inner circle size */
+  height: calc(100% - 16px); /* Adjust inner circle size */
+  background: white;
+  border-radius: 50%;
+}
+
+.circular-progress-value {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  z-index: 1;
+}
+
+.circular-progress-unit {
+  font-size: 0.7em;
+  color: #666;
+  z-index: 1;
+}
+
+.circular-progress-remaining,
+.circular-progress-subtitle {
+  font-size: 0.8em;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* Ensure meal cards display macros correctly */
+.meal-card .meal-macros {
+  font-size: 0.85em;
+  color: #666;
+  margin-top: 8px;
+}
+
+.meal-card .meal-macros span {
+  margin: 0 2px;
+}
